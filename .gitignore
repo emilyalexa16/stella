@@ -1,5 +1,6 @@
+.DS_Store
 *.xml
 *.txt
 .env
-saves/
-.DS_Store
+/saves/
+/__pycache__/
