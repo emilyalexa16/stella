@@ -7,12 +7,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def get_connection():
+def get_db():
     conn = psycopg2.connect(os.environ.get("DATABASE_URL"))
     return conn
 
 def init_db():
-    conn = get_connection()
+    conn = get_db()
     with conn.cursor() as cur:
         with current_app.open_resource("schema.sql") as f:
             cur.execute(f.read())
