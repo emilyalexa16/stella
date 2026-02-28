@@ -7,7 +7,7 @@ from ..services.progression_service import get_progression_focus
 bp = Blueprint("categories", __name__)
 
 @bp.route('/verify_session')
-def verify():
+def verify_session():
     if "uploaded_file" not in session:
         return redirect(url_for("main.index"))
 

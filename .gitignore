@@ -1,6 +1,10 @@
+# generated files
 .DS_Store
+*/__pycache__/
+*.pyc
+
+# sample files / utilities used for testing
 *.xml
 *.txt
 .env
 /saves/
-*/__pycache__/
