@@ -1,4 +1,4 @@
-def get_skill_focus(data):# skills
+def get_skill_focus(data):
     skills = ["Farming", "Fishing", "Foraging", "Mining", "Combat"]
     skills_xp = data["SaveGame"]["player"]["experiencePoints"]["int"]
 

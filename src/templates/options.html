@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Which area would you like assistance with?</h1>
+
+<div class="options">
+    <a href="./friendships">Friendships</a>
+    <a href="./skills">Skills</a>
+    <a href="./progression">Progression</a>
+</div>
+
+<div class="back-button">
+    <a href="{{ url_for('main.index') }}">
+        <button type="button">Choose a Different File</button>
+    </a>
+</div>
+
+{% endblock %}

@@ -23,7 +23,7 @@ main {
 .options a {
     display: inline-block;
     padding: 1rem 2rem;
-    margin: 1rem 1rem 0 0;
+    margin: 1rem 1rem 2rem 0;
     background-color: #3498db;
     color: white;
     text-decoration: none;
@@ -32,4 +32,17 @@ main {
 
 .options a:hover {
     background-color: #2980b9;
+}
+
+.ok {
+    font-size: 20px;
+}
+
+.op {
+    font-size: 20px;
+    margin-left: -70px;
+    font-weight: bold;
+    background-color: yellow;
+    border-radius: 5px;
+    cursor: pointer;
 }

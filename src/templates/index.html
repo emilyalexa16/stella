@@ -2,10 +2,12 @@
 
 {% block content %}
 <h1>Welcome to the Stella AI!</h1>
+<h1>Upload your file below:</h1>
 
-<div class="options">
-    <a href="./friendships">Friendships</a>
-    <a href="./skills">Skills</a>
-    <a href="./progression">Progression</a>
+ <div class="center">
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <input class="ok" type="file" name="file">
+            <button class="op">Submit</button>
+        </form>
 </div>
 {% endblock %}

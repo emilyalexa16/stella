@@ -4,18 +4,15 @@ def get_friendship_focus(data):
     friends = []
 
     for item in items:
-        # more tags
         name = item["key"]["string"]
         friendship = item["value"]["Friendship"]
 
-        # store what's in the innermost tags
         points = int(friendship["Points"])
         gifts_today = int(friendship["GiftsToday"])
         gifts_week = int(friendship["GiftsThisWeek"])
         talked_today = friendship["TalkedToToday"] == "true"
         status = str(friendship["Status"])
 
-        # dynamic scoring formula
         score = points
         if gifts_today == 0:
             score += 100
