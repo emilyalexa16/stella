@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
+{% block page_title %}You have selected: Progression{% endblock %}
+
+{% set dialogue_messages = [milestone] %}
+
 {% block content %}
-<h2>{{ category }}</h2>
-<p>{{ milestone }}</p>
+
+<div class="back-button">
+    <a href="{{ url_for('categories.verify_session') }}" class="button-link gray">Choose a Different Category</a>
+</div>
+
 {% endblock %}

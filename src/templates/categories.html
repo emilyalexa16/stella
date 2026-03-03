@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_title %}Category Selection{% endblock %}
+
+{% set dialogue_messages = [
+  "Thank you for uploading your save file!", 
+  "Please select below what you would like to focus on today."
+] %}
+
+{% block content %}
+
+<div class="categories">
+    <a href="./friendships" class="button-link">Friendships</a>
+    <a href="./skills" class="button-link">Skills</a>
+    <a href="./progression" class="button-link">Progression</a>
+</div>
+
+<div class="back-button">
+    <!-- Make the <a> itself the button, no <button> inside -->
+    <a href="{{ url_for('main.index') }}" class="button-link gray">Upload a Different File</a>
+</div>
+
+{% endblock %}

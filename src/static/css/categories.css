@@ -1,0 +1,37 @@
+/* All links styled as buttons */
+.button-link {
+    display: inline-block;           /* layout */
+    padding: 12px 24px;               /* spacing inside button */
+    margin-right: 10px;              /* spacing outside button */
+    margin-bottom: 10px;
+    border: 2px solid #CD853F;       /* border */
+    border-radius: 6px;               /* rounded corners */
+    background-color: #CD853F;        /* background */
+    color: white;                     /* text color */
+    font-family: 'StardewFont', serif; /* font */
+    font-size: 20px;
+    text-align: center;               /* text alignment */
+    text-decoration: none;            /* remove underline */
+    text-shadow:                        /* text outline effect */
+        1px 1px 0 black,
+    -1px 1px 0 black,
+        1px -1px 0 black,
+    -1px -1px 0 black;
+    cursor: pointer;                  /* pointer on hover */
+    transition: background-color 0.2s, transform 0.2s; /* hover effects */
+}
+
+.button-link:hover {
+    background-color: #f2c39b;
+    transform: translateY(-2px);
+}
+
+/* Red variant for back button */
+.button-link.gray {
+    border: 2px solid gray;
+    background-color: gray;
+}
+
+.button-link.gray:hover {
+    background-color: #bbbbbb;
+}

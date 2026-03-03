@@ -2,24 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Stella AI</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dialogue.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/categories.css') }}">
 </head>
 <body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('main.index') }}">Upload</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-    <a href="{{ url_for('main.index') }}">Home</a>
-    {% if g.user %}
-        <a href="{{ url_for('auth.logout') }}">Logout</a>
-    {% else %}
-        <a href="{{ url_for('auth.login') }}">Login</a>
-        <a href="{{ url_for('auth.register') }}">Register</a>
-    {% endif %}
-</nav>
+    <div class="center-container">
+        <!-- Page title -->
+        <h1 class="page-title">{% block page_title %}Default Page{% endblock %}</h1>
 
-<main>
-    {% block content %}{% endblock %}
-</main>
+        <!-- Stardew-style dialogue box -->
+        <div class="dialogue-box">
+            <div class="dialogue-text-box">
+                <div class="dialogue-text" 
+                     id="dialogue-text" 
+                     data-messages='{{ dialogue_messages|tojson | safe }}'>
+                </div>
+            </div>
+            <div class="character-box">
+                <div class="character-image">
+                    <img src="{{ url_for('static', filename='character.png') }}" alt="Character">
+                </div>
+                <div class="character-scroll">Stella</div>
+            </div>
+        </div>
 
+        <!-- Page-specific content (e.g., upload form) -->
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='dialogue.js') }}"></script>
 </body>
 </html>

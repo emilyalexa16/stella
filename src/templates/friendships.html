@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 
+{% block page_title %}You have selected: Friendships{% endblock %}
+
+{% set dialogue_messages = [
+    "It looks like you should focus on " ~ friend ~ " next!"
+] %}
+
 {% block content %}
-<h2>{{ category }}</h2>
-<p>Focus on <strong>{{ friend }}</strong> next.</p>
+
+<div class="back-button">
+    <a href="{{ url_for('categories.verify_session') }}" class="button-link gray">Choose a Different Category</a>
+</div>
+
 {% endblock %}

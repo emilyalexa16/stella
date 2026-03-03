@@ -11,7 +11,7 @@ def verify_session():
     if "uploaded_file" not in session:
         return redirect(url_for("main.index"))
 
-    return render_template("options.html")
+    return render_template("categories.html", page_title='Category Selection')
 
 @bp.route("/friendships", methods=["GET"])
 def friendships():

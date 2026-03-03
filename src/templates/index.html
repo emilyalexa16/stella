@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 
-{% block content %}
-<h1>Welcome to the Stella AI!</h1>
-<h1>Upload your file below:</h1>
+{% block page_title %}Welcome to the Stella AI!{% endblock %}
 
- <div class="center">
-        <form method="POST" action="/" enctype="multipart/form-data">
-            <input class="ok" type="file" name="file">
-            <button class="op">Submit</button>
-        </form>
+{% set dialogue_messages = [
+  "Hi! I\'m Stella, your AI companion for playing Stardew Valley!", 
+  "Upload your save file to get started."
+] %}
+
+{% block content %}
+
+<div class="upload-box">
+  <form method="POST" action="/" enctype="multipart/form-data" class="upload-form">
+      <input type="file" name="file" class="upload-input">
+      <button type="submit" class="submit-button">Submit</button>
+  </form>
 </div>
+
 {% endblock %}

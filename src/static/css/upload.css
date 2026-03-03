@@ -1,0 +1,58 @@
+/* Make all text inside dialogue use StardewFont */
+.upload-box, 
+.upload-box input,
+.upload-box button {
+    font-family: 'StardewFont', serif;
+}
+
+.upload-box {
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* Style the file input */
+.upload-box input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 2px solid #CD853F;
+    background-color: #F5DEB3;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.upload-box input::file-selector-button {
+    padding: 6px 12px;
+    border: 2px solid #CD853F;
+    border-radius: 6px;
+    background-color: #CD853F;
+    font-family: 'StardewFont', serif;
+    color: white;
+        text-shadow:
+        1px 1px 0 black,
+       -1px 1px 0 black,
+        1px -1px 0 black,
+       -1px -1px 0 black;
+    margin-right: 10px; /* space between button and filename */
+    cursor: pointer;
+}
+
+/* Style the submit button */
+.upload-box button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 2px solid #CD853F;
+    background-color: #F5DEB3;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Optional: hover effect like Stardew buttons */
+.submit-button:hover {
+    background-color: #e6d2b0;
+}

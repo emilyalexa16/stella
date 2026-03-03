@@ -8,3 +8,7 @@
 *.txt
 .env
 /saves/
+
+# static files
+*.png
+*.woff2

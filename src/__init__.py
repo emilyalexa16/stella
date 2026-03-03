@@ -18,8 +18,8 @@ def create_app(test_config=None):
     if test_config:
         app.config.from_mapping(test_config)
     
-    from .db import db
-    db.init_app(app)
+    #from .db import db
+    #db.init_app(app)
 
     from .routes import auth
     app.register_blueprint(auth.bp)
