@@ -27,7 +27,7 @@ class FriendshipRLAgent:
     def _reward(self, friend_data, action):
         f = dict(friend_data)
         POSITIVE_STATUSES = ("Friendly", "Dating", "Engaged", "Married")
-        NEGATIVE_STATUSES   = ("Hostile", "Divorced")
+        NEGATIVE_STATUSES = ("Hostile", "Divorced")
 
         if int(f["Points"]) >= 2500:
             return -20, f

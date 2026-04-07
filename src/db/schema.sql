@@ -1,7 +1,0 @@
-DROP TABLE IF EXISTS app_user;
-
-CREATE TABLE app_user(
-  id SERIAL PRIMARY KEY,
-  username TEXT UNIQUE NOT NULL,
-  password TEXT NOT NULL
-);
