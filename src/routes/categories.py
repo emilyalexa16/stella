@@ -3,6 +3,7 @@ from ..services.save_service import load_save_file
 from ..services.friendship_service import get_friendship_focus
 from ..services.skills_service import get_skill_focus
 from ..services.progression_service import get_progression_focus
+from ..services.advanced_friendship_service import get_advanced_friendship_focus
 
 bp = Blueprint("categories", __name__)
 
@@ -33,3 +34,10 @@ def progression():
     data = load_save_file(uploaded_file)
     milestone = get_progression_focus(data)
     return render_template("progression.html", milestone=milestone)
+
+@bp.route("/advanced_friendships", methods=["GET"])
+def advanced_friendships():
+    uploaded_file = session.get('uploaded_file')
+    data = load_save_file(uploaded_file)
+    friend = get_advanced_friendship_focus(data)
+    return render_template("advanced_friendships.html", friend=friend)
