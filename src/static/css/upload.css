@@ -7,7 +7,7 @@
 
 .upload-box input,
 .upload-box button {
-    width: 100%;          /* fills container safely */
+    width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     font-size: clamp(16px, 2.5vw, 20px);
@@ -18,14 +18,13 @@
     max-width: 700px;
     text-align: center;
 
-    margin: 0 auto;        /* centers horizontally */
-    padding: 0 16px;       /* prevents edge clipping on mobile */
+    margin: 0 auto;
+    padding: 0 16px;
     box-sizing: border-box;
 
-    gap: 10px;            /* replaces margin stacking */
+    gap: 10px;
 }
 
-/* Style the file input */
 .upload-box input {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -50,11 +49,10 @@
        -1px 1px 0 black,
         1px -1px 0 black,
        -1px -1px 0 black;
-    margin-right: 10px; /* space between button and filename */
+    margin-right: 10px;
     cursor: pointer;
 }
 
-/* Style the submit button */
 .upload-box button {
     margin-top: 10px;
     padding: 10px 20px;
@@ -66,7 +64,6 @@
     cursor: pointer;
 }
 
-/* Optional: hover effect like Stardew buttons */
 .submit-button:hover {
     background-color: #e6d2b0;
 }

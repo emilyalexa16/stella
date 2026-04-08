@@ -1,20 +1,22 @@
 .dialogue-box {
     display: flex; 
     flex-wrap: nowrap;
+
     align-items: stretch; 
-    justify-content: center; /* center horizontally */ 
+    justify-content: center; 
+
     width: clamp(320px, 90vw, 800px);
-    margin: 0 auto 10px auto; /* centers the whole box */ 
-    padding: 0 16px; /* prevents edge clipping on mobile */ 
+    margin: 0 auto 10px auto;
+    padding: 0 16px; 
     box-sizing: border-box; 
     margin-bottom: 10px;
 }
 
 .dialogue-text-box {
     flex: 1 1 auto;
-    min-width: 0;        /* VERY important for mobile */
+    min-width: 0;
 
-    max-width: 600px;   /* prevents “too wide” stretching */
+    max-width: 600px;
 
     height: clamp(120px, 25vh, 200px);
 
@@ -42,7 +44,7 @@
 }
 
 .character-box {
-    flex: 0 0 200px;   /* FIXED width (important) */
+    flex: 0 0 200px;
 
     display: flex;
     flex-direction: column;
