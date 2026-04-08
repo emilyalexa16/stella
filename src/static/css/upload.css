@@ -64,6 +64,10 @@
     cursor: pointer;
 }
 
+.upload-box.drag-over {
+    background-color: red;
+}
+
 .submit-button:hover {
     background-color: #e6d2b0;
 }
