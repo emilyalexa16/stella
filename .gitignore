@@ -7,5 +7,4 @@
 *.xml
 uploads.txt
 all_tags.txt
-.env
 /saves/
