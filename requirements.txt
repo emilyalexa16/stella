@@ -1,2 +1,6 @@
 flask
 gunicorn
+xmltodict
+random
+collections
+werkzeug.utils
