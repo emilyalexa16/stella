@@ -5,7 +5,7 @@
 
 # sample files / utilities used for testing
 *.xml
-*.txt
+uploads.txt
 .env
 /saves/
 
