@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_title %}Invalid File Upload{% endblock %}
+
+{% set dialogue_messages = [
+  "The file you uploaded does not end in \".xml\".", 
+  "Please upload a different file."
+] %}
+
+{% block content %}
+
+<div class="back-button">
+    <!-- Make the <a> itself the button, no <button> inside -->
+    <a href="{{ url_for('main.index') }}" class="button-link gray">Upload a Different File</a>
+</div>
+
+{% endblock %}

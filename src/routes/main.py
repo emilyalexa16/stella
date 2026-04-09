@@ -21,7 +21,7 @@ def index():
             if file:
                 filename = secure_filename(file.filename)
                 if not filename.lower().endswith(".xml"):
-                    return redirect(url_for("categories.invalid_file"))
+                    return redirect(url_for("categories.file_not_xml"))
 
                 path = current_app.config['UPLOAD_DEST']
                 file.save(path)

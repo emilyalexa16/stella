@@ -1,0 +1,20 @@
+{% set wiki_url = "https://stardewvalleywiki.com/Saves#Find_your_save_files" %}
+
+{% extends "base.html" %}
+
+{% block page_title %}How to Upload Your Save File{% endblock %}
+
+{% set dialogue_messages = [
+  '1. Click the button below for instructions on finding your save file.',
+  "2. If your file does not end in \".xml\", rename your file accordingly.",
+  "3. Click \"Upload\" on the navigation bar.", 
+  "4. Click \"Choose File\" and select your file."
+] %}
+
+{% block content %}
+
+<div class="categories">
+    <a href="https://stardewvalleywiki.com/Saves#Find_your_save_files" class="button-link">Finding Your Save File</a>
+</div>
+
+{% endblock %}

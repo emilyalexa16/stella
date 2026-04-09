@@ -16,9 +16,13 @@ def verify_session():
 
     return render_template("categories.html")
 
-@bp.route('/invalid_file')
-def invalid_file():
-    return render_template("invalid_file.html")
+@bp.route('/file_not_xml')
+def file_not_xml():
+    return render_template("file_not_xml.html")
+
+@bp.route('/file_invalid_save')
+def file_invalid_save():
+    return render_template("file_invalid_save.html")
 
 @bp.route("/friendships", methods=["GET"])
 def friendships():
@@ -29,7 +33,7 @@ def friendships():
         friend = get_friendship_focus(data)
         return render_template("friendships.html", friend=friend)
     except (ExpatError, ValueError, TypeError):
-        return redirect(url_for("categories.invalid_file"))
+        return redirect(url_for("categories.file_invalid_save"))
 
 @bp.route("/skills", methods=["GET"])
 def skills():
@@ -40,7 +44,7 @@ def skills():
         skill = get_skill_focus(data)
         return render_template("skills.html", skill=skill)
     except (ExpatError, ValueError, TypeError):
-        return redirect(url_for("categories.invalid_file"))
+        return redirect(url_for("categories.file_invalid_save"))
 
 @bp.route("/progression", methods=["GET"])
 def progression():
@@ -51,7 +55,7 @@ def progression():
         milestone = get_progression_focus(data)
         return render_template("progression.html", milestone=milestone)
     except (ExpatError, ValueError, TypeError):
-        return redirect(url_for("categories.invalid_file"))
+        return redirect(url_for("categories.file_invalid_save"))
 
 @bp.route("/advanced_friendships", methods=["GET"])
 def advanced_friendships():
@@ -62,4 +66,4 @@ def advanced_friendships():
         friend = get_advanced_friendship_focus(data)
         return render_template("advanced_friendships.html", friend=friend)
     except (ExpatError, ValueError, TypeError):
-        return redirect(url_for("categories.invalid_file"))
+        return redirect(url_for("categories.file_invalid_save"))

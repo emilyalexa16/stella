@@ -19,6 +19,9 @@ def create_app(test_config=None):
     from .routes import categories
     app.register_blueprint(categories.bp)
 
+    from .routes import instructions
+    app.register_blueprint(instructions.bp) 
+
     from .routes import about
     app.register_blueprint(about.bp) 
        
