@@ -19,7 +19,10 @@ def index():
                 return redirect(request.url)
             
             if file:
-                secure_filename(file.filename)
+                filename = secure_filename(file.filename)
+                if not filename.lower().endswith(".xml"):
+                    return redirect(url_for("categories.invalid_file"))
+
                 path = current_app.config['UPLOAD_DEST']
                 file.save(path)
                 session['uploaded_file'] = path

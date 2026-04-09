@@ -5,39 +5,61 @@ from ..services.skills_service import get_skill_focus
 from ..services.progression_service import get_progression_focus
 from ..services.advanced_friendship_service import get_advanced_friendship_focus
 
+from xml.parsers.expat import ExpatError
+
 bp = Blueprint("categories", __name__)
 
-@bp.route('/verify_session')
+@bp.route('/categories')
 def verify_session():
     if "uploaded_file" not in session:
         return redirect(url_for("main.index"))
 
     return render_template("categories.html")
 
+@bp.route('/invalid_file')
+def invalid_file():
+    return render_template("invalid_file.html")
+
 @bp.route("/friendships", methods=["GET"])
 def friendships():
     uploaded_file = session.get('uploaded_file')
-    data = load_save_file(uploaded_file)
-    friend = get_friendship_focus(data)
-    return render_template("friendships.html", friend=friend)
+
+    try:
+        data = load_save_file(uploaded_file)
+        friend = get_friendship_focus(data)
+        return render_template("friendships.html", friend=friend)
+    except (ExpatError, ValueError, TypeError):
+        return redirect(url_for("categories.invalid_file"))
 
 @bp.route("/skills", methods=["GET"])
 def skills():
     uploaded_file = session.get('uploaded_file')
-    data = load_save_file(uploaded_file)
-    skill = get_skill_focus(data)
-    return render_template("skills.html", skill=skill)
+
+    try:
+        data = load_save_file(uploaded_file)
+        skill = get_skill_focus(data)
+        return render_template("skills.html", skill=skill)
+    except (ExpatError, ValueError, TypeError):
+        return redirect(url_for("categories.invalid_file"))
 
 @bp.route("/progression", methods=["GET"])
 def progression():
     uploaded_file = session.get('uploaded_file')
-    data = load_save_file(uploaded_file)
-    milestone = get_progression_focus(data)
-    return render_template("progression.html", milestone=milestone)
+
+    try:
+        data = load_save_file(uploaded_file)
+        milestone = get_progression_focus(data)
+        return render_template("progression.html", milestone=milestone)
+    except (ExpatError, ValueError, TypeError):
+        return redirect(url_for("categories.invalid_file"))
 
 @bp.route("/advanced_friendships", methods=["GET"])
 def advanced_friendships():
     uploaded_file = session.get('uploaded_file')
-    data = load_save_file(uploaded_file)
-    friend = get_advanced_friendship_focus(data)
-    return render_template("advanced_friendships.html", friend=friend)
+
+    try:
+        data = load_save_file(uploaded_file)
+        friend = get_advanced_friendship_focus(data)
+        return render_template("advanced_friendships.html", friend=friend)
+    except (ExpatError, ValueError, TypeError):
+        return redirect(url_for("categories.invalid_file"))
