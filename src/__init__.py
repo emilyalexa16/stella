@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask
+from flask import render_template
 
 UPLOAD_DEST = 'uploads.txt'
 
@@ -34,3 +35,7 @@ app = create_app()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("page_not_found.html"), 404

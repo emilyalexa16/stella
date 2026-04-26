@@ -7,3 +7,6 @@ class TestFriendshipService(unittest.TestCase):
     def test_friendship_points(self):
         result = get_friendship_focus(FRIENDSHIP_POINTS)
         self.assertEqual(result, "Sebastian")
+
+if __name__ == "__main__":
+    unittest.main()

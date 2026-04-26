@@ -15,3 +15,6 @@ class TestSkillsService(unittest.TestCase):
     def test_skills_zero(self):
         result = get_skill_focus(SKILLS_ZERO)
         self.assertEqual(result, "Farming")
+
+if __name__ == "__main__":
+    unittest.main()

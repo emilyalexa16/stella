@@ -21,3 +21,6 @@ class TestProgression(unittest.TestCase):
     def test_success(self):
         self.assertEqual(get_progression_focus(WELL_PROGRESSED),
                          "You are well progressed! Keep up the good work!")
+
+if __name__ == "__main__":
+    unittest.main()

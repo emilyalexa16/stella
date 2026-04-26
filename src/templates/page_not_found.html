@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_title %}Page Not Found{% endblock %}
+
+{% set dialogue_messages = [
+  "The page you are looking for does not exist.", 
+  "Please return to the home page."
+] %}
+
+{% block content %}
+
+<div class="back-button">
+    <!-- Make the <a> itself the button, no <button> inside -->
+    <a href="{{ url_for('main.index') }}" class="button-link gray">Home Page</a>
+</div>
+
+{% endblock %}
