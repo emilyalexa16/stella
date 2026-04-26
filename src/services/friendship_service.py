@@ -29,4 +29,4 @@ def get_friendship_focus(data):
 
         prioritized_friend = max(friends, key=lambda f: f["score"])
 
-        return prioritized_friend["name"]
+    return prioritized_friend["name"]
