@@ -1,6 +1,6 @@
 import unittest
 from src.services.friendship_service import get_friendship_focus
-from tests.fixtures.category_fixtures import FRIENDSHIP_POINTS
+from tests.fixtures.friendship_fixtures import FRIENDSHIP_POINTS
 
 class TestFriendshipService(unittest.TestCase):
 

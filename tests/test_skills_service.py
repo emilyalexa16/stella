@@ -1,6 +1,6 @@
 import unittest
 from src.services.skills_service import get_skill_focus
-from tests.fixtures.category_fixtures import SKILLS_BASIC, SKILLS_TIE, SKILLS_ZERO
+from tests.fixtures.skills_fixtures import SKILLS_BASIC, SKILLS_TIE, SKILLS_ZERO
 
 class TestSkillsService(unittest.TestCase):
 
