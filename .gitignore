@@ -4,7 +4,6 @@
 *.pyc
 
 # sample files / utilities used for testing
-*.xml
 uploads.txt
 all_tags.txt
 /saves/
